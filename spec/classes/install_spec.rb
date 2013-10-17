@@ -11,6 +11,7 @@ describe 'jira::install' do
     it { should contain_wget__fetch('download_jira') }
     it { should contain_exec('extract_jira') }
     it { should contain_file('/opt') }
+    it { should contain_file('/etc/init.d/jira') }
   end
 
   describe 'jira::install class on Debian' do
@@ -23,5 +24,6 @@ describe 'jira::install' do
     it { should contain_wget__fetch('download_jira') }
     it { should contain_exec('extract_jira') }
     it { should contain_file('/opt') }
+    it { should contain_file('/etc/init.d/jira') }
   end
 end

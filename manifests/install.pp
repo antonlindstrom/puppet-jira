@@ -28,4 +28,12 @@ class jira::install {
     require   => Wget::Fetch['download_jira'],
   }
 
+  file { '/etc/init.d/jira':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+    content => template('jira/jira-init.erb'),
+  }
+
 }
