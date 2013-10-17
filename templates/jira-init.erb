@@ -30,7 +30,12 @@ start () {
 }
 
 stop () {
-        start-stop-daemon --stop --quiet --oknodo --pidfile "$PIDFILE" --exec $STOP_SCRIPT
+        log_daemon_msg "Stopping $NAME"
+        if start-stop-daemon --stop --quiet --pidfile "$PIDFILE"; then
+                log_end_msg 0
+        else
+                log_end_msg 1
+        fi
 }
 
 status () {
