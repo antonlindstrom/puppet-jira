@@ -7,7 +7,9 @@ describe 'jira::install' do
     }}
 
     it { should contain_class('java7') }
-    it { should contain_exec('download_jira') }
+    it { should contain_class('wget') }
+    it { should contain_wget__fetch('download_jira') }
+    it { should contain_exec('extract_jira') }
     it { should contain_file('/opt') }
   end
 
@@ -17,7 +19,9 @@ describe 'jira::install' do
     }}
 
     it { should contain_class('java7') }
-    it { should contain_exec('download_jira') }
+    it { should contain_class('wget') }
+    it { should contain_wget__fetch('download_jira') }
+    it { should contain_exec('extract_jira') }
     it { should contain_file('/opt') }
   end
 end

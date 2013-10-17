@@ -3,5 +3,6 @@ fixtures:
     stdlib: git://github.com/puppetlabs/puppetlabs-stdlib.git
     mysql: git://github.com/puppetlabs/puppetlabs-mysql.git
     java7: git://github.com/softek/puppet-java7.git
+    wget: git://github.com/maestrodev/puppet-wget.git
   symlinks:
     jira: "#{source_dir}"
