@@ -1,6 +1,6 @@
-# jira
+# JIRA
 
-Puppet module for jira.
+Puppet module for Atlassian JIRA.
 
 ## Example usage
 
