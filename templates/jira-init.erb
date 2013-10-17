@@ -15,8 +15,8 @@
 NAME="jira"
 JIRA_HOME="<%= scope.lookupvar('jira::params::home') %>"
 JIRA_PATH="/opt/atlassian-jira-<%= scope.lookupvar('jira::params::version') %>-standalone"
-START_SCRIPT="${JIRA_PATH}/bin/startup.sh"
-STOP_SCRIPT="${JIRA_PATH}/bin/stop_jira.sh"
+START_SCRIPT="${JIRA_PATH}/bin/start-jira.sh"
+STOP_SCRIPT="${JIRA_PATH}/bin/stop-jira.sh"
 PIDFILE="${JIRA_PATH}/work/catalina.pid"
 CWD=`pwd`
 
