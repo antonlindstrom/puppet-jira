@@ -13,6 +13,7 @@
 . /lib/lsb/init-functions
 
 NAME="jira"
+JIRA_HOME="<%= scope.lookupvar('jira::params::home') %>"
 JIRA_PATH="/opt/atlassian-jira-<%= scope.lookupvar('jira::params::version') %>-standalone"
 START_SCRIPT="${JIRA_PATH}/bin/startup.sh"
 STOP_SCRIPT="${JIRA_PATH}/bin/stop_jira.sh"
@@ -21,7 +22,7 @@ CWD=`pwd`
 
 start () {
         log_daemon_msg "Starting $NAME"
-        if start-stop-daemon --start --quiet --oknodo -d /opt/ --pidfile "$PIDFILE" -b -m -N 19 --exec $START_SCRIPT; then
+        if start-stop-daemon --start --quiet --user jira -d $JIRA_PATH --pidfile "$PIDFILE" --exec $START_SCRIPT; then
                 log_end_msg 0
         else
                 log_end_msg 1
