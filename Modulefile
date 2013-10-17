@@ -8,5 +8,4 @@ description   'UNKNOWN'
 project_page  'UNKNOWN'
 
 dependency 'puppetlabs/stdlib', '>= 3.0.0'
-dependency 'puppetlabs/mysql', '>= 1.0.0'
 dependency 'softek/java7', '>= 0.1.0'
