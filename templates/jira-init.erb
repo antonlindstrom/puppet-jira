@@ -12,7 +12,7 @@
 
 . /lib/lsb/init-functions
 
-NAME="<%= title %>"
+NAME="jira"
 JIRA_PATH="/opt/atlassian-jira-<%= scope.lookupvar('jira::params::jira_version') %>-standalone"
 START_SCRIPT="${JIRA_PATH}/bin/startup.sh"
 STOP_SCRIPT="${JIRA_PATH}/bin/stop_jira.sh"
