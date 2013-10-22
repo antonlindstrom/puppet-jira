@@ -19,11 +19,10 @@ STOP_SCRIPT="${JIRA_PATH}/bin/stop-jira.sh"
 PIDFILE="${JIRA_PATH}/work/catalina.pid"
 CWD=`pwd`
 
-initial_memory="-Xms<%= scope.lookupvar('jira::params::initial_memory') %>"
-max_memory="-Xmx<%= scope.lookupvar('jira::params::maximum_memory') %>"
-permgen_size="-XX:MaxPermSize=<%= scope.lookupvar('jira::params::permgen_size') %>"
+export JVM_MINIMUM_MEMORY="<%= scope.lookupvar('jira::initial_memory') %>"
+export JVM_MAXIMUM_MEMORY="<%= scope.lookupvar('jira::maximum_memory') %>"
+export JIRA_MAX_PERM_SIZE="<%= scope.lookupvar('jira::permgen_size') %>"
 
-export CATALINA_OPTS="-Djava.net.preferIPv4Stack=true $permgen_size $initial_memory $permgen_size"
 export JIRA_HOME="<%= scope.lookupvar('jira::params::home') %>"
 
 start () {

@@ -5,7 +5,8 @@
 class jira::config {
   include jira::params
 
-  $jira_home = $jira::params::home
+  $jira_home    = $jira::params::home
+  $jira_version = $jira::params::version
 
   user { 'jira':
     ensure => present,
@@ -17,4 +18,14 @@ class jira::config {
     owner   => 'jira',
     require => User['jira'],
   }
+
+  file { 'setenv.sh':
+    ensure => present,
+    path   => "/opt/atlassian-jira-${jira_version}-standalone/bin/setenv.sh",
+    mode   => '0755',
+    owner  => root,
+    group  => root,
+    source => 'puppet:///modules/jira/setenv.sh',
+  }
+
 }
