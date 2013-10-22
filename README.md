@@ -20,6 +20,12 @@ Set max, min and permgen memory sizes:
       permgen_size   => '2048m',
     }
 
+Set JVM options for jira:
+
+    class { 'jira':
+      jvm_options => '-Djava.net.preferIPv4Stack=true',
+    }
+
 ## License
 
 See [LICENSE](LICENSE) file.
