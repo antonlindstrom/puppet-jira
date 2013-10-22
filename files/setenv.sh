@@ -5,8 +5,7 @@ JVM_SUPPORT_RECOMMENDED_ARGS=""
 #
 # The following are the required arguments for JIRA.
 #
-JVM_REQUIRED_ARGS="-Djava.awt.headless=true $JVM_OPTS -Datlassian.standalone=JIRA -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true -
-Dmail.mime.decodeparameters=true"
+JVM_REQUIRED_ARGS="-Djava.awt.headless=true $JVM_OPTS -Datlassian.standalone=JIRA -Dorg.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true -Dmail.mime.decodeparameters=true"
 
 # Uncomment this setting if you want to import data without notifications
 #
@@ -40,8 +39,7 @@ if [ "$JIRA_HOME" != "" ]; then
     fi
 fi
 
-JAVA_OPTS="-Xms${JVM_MINIMUM_MEMORY} -Xmx${JVM_MAXIMUM_MEMORY} ${JAVA_OPTS} ${JVM_REQUIRED_ARGS} ${DISABLE_NOTIFICATIONS} ${JVM_SUPPORT_RECOMMEND
-ED_ARGS} ${JVM_EXTRA_ARGS} ${JIRA_HOME_MINUSD}"
+JAVA_OPTS="-Xms${JVM_MINIMUM_MEMORY} -Xmx${JVM_MAXIMUM_MEMORY} ${JAVA_OPTS} ${JVM_REQUIRED_ARGS} ${DISABLE_NOTIFICATIONS} ${JVM_SUPPORT_RECOMMENDED_ARGS} ${JVM_EXTRA_ARGS} ${JIRA_HOME_MINUSD}"
 
 # Perm Gen size needs to be increased if encountering OutOfMemoryError: PermGen problems. Specifying PermGen size is not valid on IBM JDKs
 if [ -f "${PRGDIR}/permgen.sh" ]; then
@@ -58,8 +56,7 @@ fi
 export JAVA_OPTS
 
 echo ""
-echo "If you encounter issues starting or stopping JIRA, please see the Troubleshooting guide at http://confluence.atlassian.com/display/JIRA/Ins
-tallation+Troubleshooting+Guide"
+echo "If you encounter issues starting or stopping JIRA, please see the Troubleshooting guide at http://confluence.atlassian.com/display/JIRA/Installation+Troubleshooting+Guide"
 echo ""
 if [ "$JIRA_HOME_MINUSD" != "" ]; then
     echo "Using JIRA_HOME:       $JIRA_HOME"
@@ -96,4 +93,3 @@ cd $PUSHED_DIR
 
 echo ""
 echo "Server startup logs are located in $LOGBASEABS/logs/catalina.out"
-
