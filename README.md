@@ -15,7 +15,7 @@ Include with default parameters:
 Set max, min and permgen memory sizes:
 
     class { 'jira':
-      initial_memory => '512m',
+      minimum_memory => '512m',
       maximum_memory => '512m',
       permgen_size   => '2048m',
     }

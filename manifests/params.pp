@@ -8,7 +8,7 @@ class jira::params {
   $home    = '/home/jira'
 
   $permgen_size    = '384m'
-  $initial_memory  = '384m'
+  $minimum_memory  = '384m'
   $maximum_memory  = '1024m'
 
   case $::osfamily {

@@ -19,7 +19,7 @@ STOP_SCRIPT="${JIRA_PATH}/bin/stop-jira.sh"
 PIDFILE="${JIRA_PATH}/work/catalina.pid"
 CWD=`pwd`
 
-export JVM_MINIMUM_MEMORY="<%= scope.lookupvar('jira::initial_memory') %>"
+export JVM_MINIMUM_MEMORY="<%= scope.lookupvar('jira::minimum_memory') %>"
 export JVM_MAXIMUM_MEMORY="<%= scope.lookupvar('jira::maximum_memory') %>"
 export JIRA_MAX_PERM_SIZE="<%= scope.lookupvar('jira::permgen_size') %>"
 
