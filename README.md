@@ -9,9 +9,22 @@ Installs a basic JIRA standalone installation in `/opt` and starts it.
 ## Example usage
 
 Include with default parameters:
-```
-include jira
-```
+
+    include jira
+
+Set max, min and permgen memory sizes:
+
+    class { 'jira':
+      minimum_memory => '512m',
+      maximum_memory => '512m',
+      permgen_size   => '2048m',
+    }
+
+Set JVM options for jira:
+
+    class { 'jira':
+      jvm_options => '-Djava.net.preferIPv4Stack=true',
+    }
 
 ## License
 
