@@ -8,6 +8,9 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class jira (
+  $initial_memory = $jira::params::initial_memory,
+  $maximum_memory = $jira::params::maximum_memory,
+  $permgen_size   = $jira::params::permgen_size
 ) inherits jira::params {
 
   # validate parameters here
