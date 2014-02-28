@@ -4,8 +4,7 @@
 #
 class jira::config(
   $secure_proxy = $jira::params::secure_proxy
-) {
-  include jira::params
+) inherits jira::params {
 
   $jira_home    = $jira::params::home
   $jira_version = $jira::params::version
