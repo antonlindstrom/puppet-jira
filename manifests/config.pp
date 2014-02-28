@@ -2,9 +2,8 @@
 #
 # This class is called from jira
 #
-class jira::config(
-  $secure_proxy = $jira::params::secure_proxy
-) inherits jira::params {
+class jira::config {
+  include jira::params
 
   $jira_home    = $jira::params::home
   $jira_version = $jira::params::version
