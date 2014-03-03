@@ -8,9 +8,6 @@ class jira::config {
   $jira_home    = $jira::params::home
   $jira_version = $jira::params::version
 
-  $proxy_host = $jira::params::proxy_host
-  $proxy_port = $jira::params::proxy_port
-
   user { 'jira':
     ensure => present,
     home   => $jira_home,

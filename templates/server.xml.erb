@@ -23,11 +23,11 @@
                    redirectPort="8443"
                    acceptCount="100"
 
-                <% if @secure_proxy %>
+                <% if scope.lookupvar('jira::secure_proxy') %>
                    secure="true"
                    scheme="https" 
-                   proxyName="<%= @proxy_host %>"
-                   proxyPort="<%= @proxy_port %>"
+                   proxyName="<%= scope.lookupvar('jira::proxy_host') %>"
+                   proxyPort="<%= scope.lookupvar('jira::proxy_port') %>"
                 <% else %>
                    secure="false"
                 <% end %>
