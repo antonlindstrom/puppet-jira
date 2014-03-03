@@ -11,6 +11,11 @@ class jira::params {
   $minimum_memory  = '384m'
   $maximum_memory  = '1024m'
 
+  $secure_proxy = false
+
+  $proxy_port = 443
+  $proxy_host = $::fqdn
+
   case $::osfamily {
     'Debian': {
       $package_name = 'jira'

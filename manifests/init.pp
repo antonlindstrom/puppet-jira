@@ -11,7 +11,10 @@ class jira (
   $minimum_memory = $jira::params::minimum_memory,
   $maximum_memory = $jira::params::maximum_memory,
   $permgen_size   = $jira::params::permgen_size,
-  $jvm_options    = undef
+  $jvm_options    = undef,
+  $secure_proxy   = $jira::params::secure_proxy,
+  $proxy_host     = $jira::params::proxy_host,
+  $proxy_port     = $jira::params::proxy_port,
 ) inherits jira::params {
 
   # validate parameters here

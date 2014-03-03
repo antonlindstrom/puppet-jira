@@ -28,4 +28,13 @@ class jira::config {
     source => 'puppet:///modules/jira/setenv.sh',
   }
 
+  file { 'server.xml':
+    ensure  => present,
+    path    => "/opt/atlassian-jira-${jira_version}-standalone/conf/server.xml",
+    mode    => '0755',
+    owner   => root,
+    group   => root,
+    content => template('jira/server.xml.erb'),
+  }
+
 }

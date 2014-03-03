@@ -26,6 +26,14 @@ Set JVM options for jira:
       jvm_options => '-Djava.net.preferIPv4Stack=true',
     }
 
+Setup Jira for SSL behind proxy:
+
+    class { 'jira':
+      secure_proxy  => true,
+      proxy_host    => $::fqdn, # default
+      proxy_port    => 443,     # default
+    }
+
 ## License
 
 See [LICENSE](LICENSE) file.
