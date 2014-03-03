@@ -9,7 +9,7 @@ describe 'jira' do
           :osfamily => osfamily,
         }}
 
-        it { should include_class('jira::params') }
+        it { should contain_class('jira::params') }
 
         it { should contain_class('jira::install') }
         it { should contain_class('jira::config') }
