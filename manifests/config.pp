@@ -6,7 +6,7 @@ class jira::config {
   include jira::params
 
   $jira_home    = $jira::params::home
-  $jira_version = $jira::params::version
+  $jira_version = $jira::version
 
   user { 'jira':
     ensure => present,

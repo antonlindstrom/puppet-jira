@@ -5,7 +5,7 @@ class jira::install {
   include wget
   include java7
 
-  $jira_version = $jira::params::version
+  $jira_version = $jira::version
 
   file { '/opt':
     ensure => directory,
